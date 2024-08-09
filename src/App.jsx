@@ -2,6 +2,8 @@ import Navbar from "./components/Navbar"
 import { useState, useEffect } from "react"
 import { v4 as uuidv4 } from 'uuid';
 uuidv4(); // ⇨ '9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d'
+import { MdDelete } from "react-icons/md";
+import { MdEdit } from "react-icons/md";
 
 
 function App() {
@@ -89,8 +91,8 @@ function App() {
                 <input type="checkbox" name={item.id} onChange={HandleCheckBox} checked={item.isCompleted} id="" />
                 <p className={`text-md font-medium ${item.isCompleted ? " line-through text-gray-500" : ""} `}>{item.Todo}</p>
                 <div className="flex justify-center items-center gap-2">
-                  <button className="text-white bg-violet-600 font-bold px-4 py-1 rounded-xl" onClick={(e) => { EditTodo(e, item.id) }}>Edit</button>
-                  <button className="text-white bg-violet-600 font-bold px-4 py-1 rounded-xl" onClick={(e) => { DeleteTodo(e, item.id) }}>Delete</button>
+                  <button className=" bg-slate-700 text-white font-bold p-1 rounded-full" onClick={(e) => { EditTodo(e, item.id) }}><MdEdit  className="text-xl" /></button>
+                  <button className="bg-slate-700 text-white font-bold p-1 rounded-full" onClick={(e) => { DeleteTodo(e, item.id) }}><MdDelete className="text-xl" /></button>
                 </div>
 
               </div>
@@ -99,7 +101,7 @@ function App() {
 
         </div>
         <div className=" mx-auto w-3/5 ">
-          <a href="https://www.youtube.com/@withcodecraft" target="_blank" className=" text-yellow-100  font-bold cursor-pointer ">@CodeCraft . Made by adrito Rafsan</a>
+          <a href="https://www.youtube.com/@withcodecraft" target="_blank" className=" text-yellow-100  font-bold cursor-pointer ">@CodeCraft</a>
         </div>
       </div>
 
