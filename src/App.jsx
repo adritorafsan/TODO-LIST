@@ -82,9 +82,10 @@ function App() {
 
           <div className="mt-10">
 
+            <h1 className="text-2xl font-semibold text-violet-400">Your TODOS:</h1>
             {TODOS.length === 0 && <div className="mx-4 mt-2 text-xl text-gray-500">No To-Do is Found !</div>}
             {TODOS.map((item) => {
-              return <div key={item.id} className="flex mt-3 gap-x-3">
+              return <div key={item.id} className="flex mt-3 items-center gap-x-3">
                 <input type="checkbox" name={item.id} onChange={HandleCheckBox} checked={item.isCompleted} id="" />
                 <p className={`text-md font-medium ${item.isCompleted ? " line-through text-gray-500" : ""} `}>{item.Todo}</p>
                 <div className="flex justify-center items-center gap-2">
